@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireAware | Find Fire Station</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="fw-navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="fire logo final.jpg" alt="Department Logo">
+                <h1>FireAware</h1>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="safety.html">Safety Tips</a>
+                <a href="report.html">Report Fire</a>
+                <a href="map.html">Find Station</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h2>📍 Find Nearby Fire Stations</h2>
+        <p>Enter your location to search for fire stations around you.</p>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <input type="text" id="locationInput" placeholder="Enter your location (e.g., Pune, Maharashtra)">
+        <button onclick="findLocation()">Search</button>
+
+        <div id="map"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 FireAware | Fire Safety Awareness and Emergency Help</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        let map = L.map('map').setView([20.5937, 78.9629], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        // Fire station icon
+        let fireIcon = new L.Icon({
+            iconUrl: "https://maps.gstatic.com/mapfiles/ms2/micons/firedept.png",
+            iconSize: [32, 32]
+        });
+
+        function findLocation() {
+            let place = document.getElementById("locationInput").value;
+
+            if (place === "") {
+                alert("Please enter a location");
+                return;
+            }
+
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${place}`)
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.length === 0) {
+                        alert("Location not found!");
+                        return;
+                    }
+
+                    let lat = data[0].lat;
+                    let lon = data[0].lon;
+
+                    map.setView([lat, lon], 14);
+
+                    L.marker([lat, lon]).addTo(map)
+                        .bindPopup("Your Location").openPopup();
+
+                    findNearbyFireStations(lat, lon);
+                });
+        }
+
+        function findNearbyFireStations(lat, lon) {
+            let query = `
+                [out:json];
+                (
+                    node["amenity"="fire_station"](around:3000, ${lat}, ${lon});
+                    way["amenity"="fire_station"](around:3000, ${lat}, ${lon});
+                    relation["amenity"="fire_station"](around:3000, ${lat}, ${lon});
+                );
+                out center;
+            `;
+
+            fetch("https://overpass-api.de/api/interpreter", {
+                    method: "POST",
+                    body: query
+                })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.elements.length === 0) {
+                        alert("No fire stations found within 3 km!");
+                        return;
+                    }
+
+                    data.elements.forEach(st => {
+                        let lat = st.lat || st.center.lat;
+                        let lon = st.lon || st.center.lon;
+                        let name = st.tags.name || "Fire Station";
+
+                        L.marker([lat, lon], {
+                                icon: fireIcon
+                            })
+                            .addTo(map)
+                            .bindPopup(name);
+                    });
+                });
+        }
+    </script>
+
+</body>
+
+</html>

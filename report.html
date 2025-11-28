@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireAware | Report Fire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="fw-navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="fire logo final.jpg" alt="Department Logo">
+                <h1>FireAware</h1>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="safety.html">Safety Tips</a>
+                <a href="report.html">Report Fire</a>
+                <a href="map.html">Find Station</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h2>🚨 Report Fire Incident</h2>
+        <p>Help emergency services respond quickly by reporting fire details below.</p>
+        <p>Please provide accurate details so emergency teams can reach the location faster.</p>
+    </section>
+
+    <!-- Fire Report Form -->
+    <section class="report-form">
+        <form action="report.php" method="POST">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="fullname" placeholder="Enter your name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location manually" required>
+
+            <label for="details">Fire Details:</label>
+            <textarea id="details" name="details" rows="5" placeholder="Describe the fire incident..." required></textarea>
+
+            <button type="submit" class="submit-btn">Submit Report</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 FireAware | Fire Safety Awareness and Emergency Help</p>
+    </footer>
+
+</body>
+
+</html>

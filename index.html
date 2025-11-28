@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireAware | Fire Safety Awareness</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="fw-navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="fire logo final.jpg" alt="Department Logo">
+                <h1>FireAware</h1>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="safety.html">Safety Tips</a>
+                <a href="report.html">Report Fire</a>
+                <a href="map.html">Find Station</a>
+                <a href="login.html" class="login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1>Your Guide to Fire Safety and Prevention</h1>
+            <p>Our Mission is to Educate and assist you in staying safe from fire hazards. Learn, preapre, and protect your community.</p>
+            <a href="tel:101" class="emergency-btn">🚨 In case of fire, call 101</a>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="actions">
+        <h3>Take Quick Action</h3>
+        <div class="action-cards">
+            <div class="card green">
+                <h4>📘 Learn Safety Tips</h4>
+                <p>Discover essential fire prevention methods and keep your family safe with expert advice.</p>
+                <a href="safety.html" class="btn green">Explore Tips</a>
+            </div>
+
+            <div class="card red">
+                <h4>🚨 Report Fire Incident</h4>
+                <p>Quickly inform nearby authorities about fire emergencies and get immediate help.</p>
+                <a href="report.html" class="btn red">Report Now</a>
+            </div>
+
+            <div class="card blue">
+                <h4>📍 Find Fire Station</h4>
+                <p>Locate the nearest fire stations in your area using live maps and directions to get immediate help.</p>
+                <a href="map.html" class="btn blue">View Stations</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Info Section -->
+    <section class="info highlight">
+        <div class="info-container">
+
+            <!-- Left Image -->
+            <div class="info-image">
+                <img src="fire.jpg" alt="Fire Safety Image">
+            </div>
+
+            <!-- Right Text -->
+            <div class="info-text">
+                <h3>Why Fire Safety Matters</h3>
+                <p>
+                    Fire accidents can occur unexpectedly and escalate within seconds. Understanding fire safety not only protects lives but also minimizes property loss and environmental damage.
+                </p>
+                <p>
+                    Awareness, preparation, and quick action are the keys to preventing small hazards from turning into major disasters. Knowing how to respond during emergencies can save your life and the lives of others.
+                </p>
+                <ul>
+                    <li>🔥 Reduces risk of major fire incidents</li>
+                    <li>🧯 Helps you respond quickly and confidently</li>
+                    <li>🏠 Protects families, homes, and communities</li>
+                    <li>🚒 Ensures faster coordination with fire departments</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 FireAware | Fire Safety Awareness and Emergency Help</p>
+    </footer>
+
+    <script>
+        function handleEmergency() {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                window.location.href = "tel:101"; // Open phone dialer
+            } else {
+                alert("Please use your phone to call 101 in case of emergency!");
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1007 @@
+                                               :root {
+                                                  --bg: #f3f6fb;
+                                                  --card: #ffffff;
+                                                  --muted: #6b7280;
+                                                  --accent-red: #e63946;
+                                                  --accent-blue: #0b60d9;
+                                                  --glass: rgba(255, 255, 255, 0.7);
+                                                  --shadow-1: 0 6px 20px rgba(16, 24, 40, 0.08);
+                                                  --shadow-2: 0 14px 40px rgba(16, 24, 40, 0.12);
+                                                  --radius-lg: 18px;
+                                                  --radius-md: 12px;
+                                                  --max-w: 1200px;
+                                              }
+                                              /* ---------- Global reset & base ---------- */
+                                              
+                                              * {
+                                                  box-sizing: border-box;
+                                                  -webkit-font-smoothing: antialiased;
+                                              }
+                                              
+                                              html,
+                                              body {
+                                                  height: 100%;
+                                              }
+                                              
+                                              body {
+                                                  margin: 0;
+                                                  font-family: "Inter", "Poppins", Arial, sans-serif;
+                                                  background: linear-gradient(180deg, var(--bg), #eef2fb 60%);
+                                                  color: #0f172a;
+                                                  -webkit-font-smoothing: antialiased;
+                                                  -moz-osx-font-smoothing: grayscale;
+                                                  line-height: 1.55;
+                                                  body {
+                                                      background: red !important;
+                                                  }
+                                              }
+                                              /* container helper */
+                                              
+                                              .container-wide {
+                                                  max-width: var(--max-w);
+                                                  margin: 0 auto;
+                                                  padding: 0 20px;
+                                              }
+                                              /* ---------- NAVBAR (glass + subtle motion) ---------- */
+                                              
+                                              .fw-navbar {
+                                                  position: sticky;
+                                                  top: 0;
+                                                  z-index: 1200;
+                                                  backdrop-filter: blur(8px) saturate(120%);
+                                                  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.72));
+                                                  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+                                                  box-shadow: var(--shadow-1);
+                                                  padding: 12px 0;
+                                              }
+                                              
+                                              .nav-container {
+                                                  max-width: var(--max-w);
+                                                  margin: 0 auto;
+                                                  padding: 0 22px;
+                                                  display: flex;
+                                                  align-items: center;
+                                                  justify-content: space-between;
+                                                  gap: 12px;
+                                              }
+                                              /* Logo block */
+                                              
+                                              .fw-navbar .logo {
+                                                  display: flex;
+                                                  gap: 14px;
+                                                  align-items: center;
+                                              }
+                                              
+                                              .fw-navbar .logo img {
+                                                  width: 60px;
+                                                  height: 60px;
+                                                  border-radius: 50%;
+                                                  object-fit: cover;
+                                                  box-shadow: 0 6px 18px rgba(230, 57, 70, 0.12);
+                                                  border: 3px solid rgba(214, 40, 40, 0.12);
+                                              }
+                                              
+                                              .fw-navbar .logo h1 {
+                                                  font-size: 1.55rem;
+                                                  margin: 0;
+                                                  font-weight: 800;
+                                                  letter-spacing: 0.3px;
+                                                  background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
+                                                  background-clip: text;
+                                                  -webkit-background-clip: text;
+                                                  -webkit-text-fill-color: transparent;
+                                              }
+                                              /* links */
+                                              
+                                              .nav-links {
+                                                  display: flex;
+                                                  align-items: center;
+                                                  gap: 16px;
+                                              }
+                                              
+                                              .nav-links a {
+                                                  font-weight: 600;
+                                                  color: #0f172a;
+                                                  text-decoration: none;
+                                                  padding: 8px 10px;
+                                                  border-radius: 8px;
+                                                  transition: all .22s ease;
+                                                  position: relative;
+                                              }
+                                              
+                                              .nav-links a::after {
+                                                  content: "";
+                                                  position: absolute;
+                                                  left: 10%;
+                                                  right: 10%;
+                                                  bottom: 6px;
+                                                  height: 2px;
+                                                  background: transparent;
+                                                  border-radius: 2px;
+                                                  transition: all .22s ease;
+                                              }
+                                              
+                                              .nav-links a:hover {
+                                                  color: var(--accent-red);
+                                                  transform: translateY(-2px);
+                                              }
+                                              
+                                              .nav-links a:hover::after {
+                                                  background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
+                                                  left: 0;
+                                                  right: 0;
+                                              }
+                                              /* login button (distinct) */
+                                              /* Simple Black Login Icon */
+                                              
+                                              .login-icon {
+                                                  display: flex;
+                                                  align-items: center;
+                                                  justify-content: center;
+                                                  padding: 0;
+                                                  /* No background padding */
+                                                  margin-left: 15px;
+                                                  text-decoration: none;
+                                              }
+                                              
+                                              .login-icon i {
+                                                  font-size: 26px;
+                                                  /* Adjust size */
+                                                  color: #000;
+                                                  /* Black icon */
+                                                  transition: 0.3s ease;
+                                              }
+                                              
+                                              .login-icon:hover i {
+                                                  color: #333;
+                                                  /* Dark grey on hover */
+                                                  transform: scale(1.1);
+                                                  /* Slight hover zoom */
+                                                  cursor: pointer;
+                                              }
+                                              /* ---------- HERO (cinematic) ---------- */
+                                              
+                                              .hero {
+                                                  margin: 22px;
+                                                  border-radius: var(--radius-lg);
+                                                  overflow: hidden;
+                                                  position: relative;
+                                                  padding: 80px 20px;
+                                                  display: flex;
+                                                  align-items: center;
+                                                  justify-content: center;
+                                                  text-align: center;
+                                                  min-height: 360px;
+                                                  box-shadow: var(--shadow-2);
+                                                  background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.12)), url('https://img.freepik.com/premium-photo/fire-extinguisher-fire-background-3d-rendering_256339-1584.jpg?w=2000');
+                                                  background-size: cover;
+                                                  background-position: center;
+                                                  color: #fff;
+                                              }
+                                              
+                                              .hero .hero-content {
+                                                  max-width: 900px;
+                                                  margin: auto;
+                                                  position: relative;
+                                                  z-index: 2;
+                                              }
+                                              
+                                              .hero h1 {
+                                                  font-size: 44px;
+                                                  margin: 0 0 12px 0;
+                                                  font-weight: 900;
+                                                  letter-spacing: -0.6px;
+                                                  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+                                              }
+                                              
+                                              .hero p {
+                                                  font-size: 18px;
+                                                  margin: 0 auto 20px;
+                                                  margin-left: 150px;
+                                                  margin-right: 150px;
+                                              }
+                                              
+                                              .emergency-btn {
+                                                  display: inline-block;
+                                                  padding: 12px 22px;
+                                                  border-radius: 12px;
+                                                  font-weight: 800;
+                                                  color: #09142a;
+                                                  background: linear-gradient(90deg, #ffdd57, #ff8a00);
+                                                  box-shadow: 0 10px 30px rgba(255, 138, 0, 0.18);
+                                                  text-decoration: none;
+                                              }
+                                              
+                                              .emergency-btn:hover {
+                                                  transform: translateY(-4px)
+                                              }
+                                              /* subtle decorative gradient blob */
+                                              
+                                              .hero::after {
+                                                  content: "";
+                                                  position: absolute;
+                                                  right: -10%;
+                                                  top: -10%;
+                                                  width: 420px;
+                                                  height: 420px;
+                                                  background: radial-gradient(circle at 30% 30%, rgba(230, 57, 70, 0.18), transparent 40%), radial-gradient(circle at 70% 70%, rgba(11, 96, 217, 0.12), transparent 40%);
+                                                  filter: blur(42px);
+                                                  z-index: 1;
+                                                  transform: rotate(12deg);
+                                              }
+                                              /* ---------- QUICK ACTIONS / CARDS ---------- */
+                                              
+                                              .actions {
+                                                  padding: 60px 0;
+                                              }
+                                              
+                                              .actions .section-wrap {
+                                                  max-width: var(--max-w);
+                                                  margin: 0 auto;
+                                                  padding: 0 20px;
+                                              }
+                                              
+                                              .actions h3 {
+                                                  text-align: center;
+                                                  font-size: 28px;
+                                                  margin-bottom: 26px;
+                                                  font-weight: 800;
+                                                  color: #071024;
+                                              }
+                                              
+                                              .action-cards {
+                                                  display: grid;
+                                                  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                                                  gap: 20px;
+                                                  align-items: start;
+                                                  margin-left: 100px;
+                                                  margin-right: 100px;
+                                              }
+                                              
+                                              .card {
+                                                  background: linear-gradient(180deg, var(--card), rgba(248, 250, 255, 0.6));
+                                                  border-radius: 14px;
+                                                  padding: 22px;
+                                                  box-shadow: var(--shadow-1);
+                                                  transition: transform .28s cubic-bezier(.2, .9, .3, 1), box-shadow .28s;
+                                                  border: 1px solid rgba(15, 23, 42, 0.04);
+                                              }
+                                              
+                                              .card h4 {
+                                                  margin: 0 0 10px 0;
+                                                  font-size: 18px;
+                                                  color: #0b2b4a;
+                                              }
+                                              
+                                              .card p {
+                                                  color: var(--muted);
+                                                  font-size: 15px;
+                                                  line-height: 1.6;
+                                                  margin-bottom: 14px;
+                                              }
+                                              /* accent top bar */
+                                              
+                                              .card.green {
+                                                  border-top: 6px solid #2a9d8f;
+                                              }
+                                              
+                                              .card.red {
+                                                  border-top: 6px solid var(--accent-red);
+                                              }
+                                              
+                                              .card.blue {
+                                                  border-top: 6px solid var(--accent-blue);
+                                              }
+                                              
+                                              .card:hover {
+                                                  transform: translateY(-8px);
+                                                  box-shadow: 0 20px 48px rgba(12, 34, 71, 0.12);
+                                              }
+                                              /* card action buttons */
+                                              
+                                              .card .btn {
+                                                  border-radius: 10px;
+                                                  padding: 10px 14px;
+                                                  font-weight: 700;
+                                                  letter-spacing: 0.2px;
+                                              }
+                                              
+                                              .btn.green {
+                                                  background: #2a9d8f;
+                                                  color: #fff;
+                                                  border: none;
+                                              }
+                                              
+                                              .btn.red {
+                                                  background: var(--accent-red);
+                                                  color: #fff;
+                                                  border: none;
+                                              }
+                                              
+                                              .btn.blue {
+                                                  background: var(--accent-blue);
+                                                  color: #fff;
+                                                  border: none;
+                                              }
+                                              /* ---------- INFO / WHY FIRE SAFETY ---------- */
+                                              
+                                              .info {
+                                                  padding: 60px 20px;
+                                                  background-color: #fff7f5;
+                                              }
+                                              
+                                              .info-container {
+                                                  display: flex;
+                                                  align-items: center;
+                                                  justify-content: center;
+                                                  gap: 30px;
+                                                  max-width: 1100px;
+                                                  margin: auto;
+                                                  flex-wrap: wrap;
+                                              }
+                                              /* Left Side Image */
+                                              
+                                              .info-image {
+                                                  flex: 1;
+                                                  max-width: 450px;
+                                              }
+                                              
+                                              .info-image img {
+                                                  width: 100%;
+                                                  border-radius: 15px;
+                                                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                                              }
+                                              /* Right Side Text */
+                                              
+                                              .info-text {
+                                                  flex: 1.3;
+                                              }
+                                              
+                                              .info-text h3 {
+                                                  font-size: 28px;
+                                                  margin-bottom: 15px;
+                                                  color: #d62828;
+                                                  font-weight: bold;
+                                              }
+                                              
+                                              .info-text p {
+                                                  margin-bottom: 12px;
+                                                  line-height: 1.6;
+                                                  color: #444;
+                                              }
+                                              
+                                              .info-text ul {
+                                                  margin-top: 15px;
+                                                  padding-left: 20px;
+                                              }
+                                              
+                                              .info-text ul li {
+                                                  margin-bottom: 8px;
+                                                  font-size: 16px;
+                                                  color: #222;
+                                              }
+                                              /* Responsive Fix */
+                                              
+                                              @media (max-width: 768px) {
+                                                  .info-container {
+                                                      flex-direction: column;
+                                                      text-align: center;
+                                                  }
+                                                  .info-text ul {
+                                                      text-align: left;
+                                                      margin: auto;
+                                                      max-width: 300px;
+                                                  }
+                                              }
+                                              /* ---------- FOOTER ---------- */
+                                              
+                                              footer {
+                                                  margin-top: 42px;
+                                                  background: linear-gradient(180deg, #07142a, #0b2143);
+                                                  color: #e6eefc;
+                                                  padding: 28px 16px;
+                                                  text-align: center;
+                                                  font-size: 15px;
+                                                  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+                                              }
+                                              
+                                              footer p {
+                                                  margin: 0;
+                                                  opacity: 0.95;
+                                              }
+                                              /* ---------- UTILITIES ---------- */
+                                              
+                                              .center {
+                                                  text-align: center;
+                                              }
+                                              
+                                              .small {
+                                                  font-size: 0.92rem;
+                                                  color: var(--muted);
+                                              }
+                                              /* ---------- RESPONSIVE ---------- */
+                                              
+                                              @media (max-width: 980px) {
+                                                  .hero h1 {
+                                                      font-size: 34px;
+                                                  }
+                                                  .nav-container {
+                                                      padding: 0 14px;
+                                                  }
+                                                  .fw-navbar .logo img {
+                                                      width: 52px;
+                                                      height: 52px;
+                                                  }
+                                                  .info-container {
+                                                      padding: 22px;
+                                                  }
+                                              }
+                                              
+                                              @media (max-width:640px) {
+                                                  .nav-links {
+                                                      display: none;
+                                                  }
+                                                  /* mobile - keep it minimal (you can implement hamburger) */
+                                                  .login-btn {
+                                                      display: inline-block;
+                                                  }
+                                                  .hero {
+                                                      padding: 48px 18px;
+                                                      margin: 16px;
+                                                      border-radius: 14px;
+                                                      min-height: 260px;
+                                                  }
+                                                  .action-cards {
+                                                      grid-template-columns: 1fr;
+                                                  }
+                                                  .info-container {
+                                                      flex-direction: column;
+                                                      text-align: center;
+                                                      gap: 16px;
+                                                  }
+                                              }
+                                              /*
+        Saftry page design*/
+                                              
+                                              .safety-hero {
+                                                  text-align: center;
+                                                  padding: 3rem 0;
+                                                  border-bottom: 1px solid var(--card-border);
+                                                  color: #d62828;
+                                              }
+                                              
+                                              .safety-hero h1 {
+                                                  font-size: 2.25rem;
+                                                  font-weight: 800;
+                                                  color: var(--dark-text);
+                                                  margin-bottom: 0.5rem;
+                                              }
+                                              
+                                              .safety-hero p {
+                                                  color: var(--light-text);
+                                                  font-size: 1.125rem;
+                                                  max-width: 600px;
+                                                  margin: 0 auto;
+                                              }
+                                              /* 3. Safety Block & Grid */
+                                              
+                                              .safety-block {
+                                                  padding: 3rem 0;
+                                              }
+                                              
+                                              .safety-block h2 {
+                                                  font-size: 1.875rem;
+                                                  font-weight: 700;
+                                                  color: var(--dark-text);
+                                                  margin-bottom: 0.5rem;
+                                                  text-align: center;
+                                              }
+                                              
+                                              .section-desc {
+                                                  text-align: center;
+                                                  color: var(--light-text);
+                                                  margin-bottom: 2rem;
+                                              }
+                                              
+                                              .safety-grid {
+                                                  display: grid;
+                                                  /* Adjusted minmax to allow for slightly smaller cards if needed, while maintaining the square aspect */
+                                                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                                                  gap: 1.5rem;
+                                              }
+                                              
+                                              .safety-card {
+                                                  background-color: #ffffff;
+                                                  border: 1px solid var(--card-border);
+                                                  border-radius: 0.75rem;
+                                                  padding: 1.5rem;
+                                                  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                                                  transition: all 0.3s;
+                                                  /* --- NEW CSS FOR SQUARE SHAPE --- */
+                                                  aspect-ratio: 1 / 1;
+                                                  /* Forces the height to equal the width */
+                                                  display: flex;
+                                                  flex-direction: column;
+                                                  justify-content: flex-start;
+                                                  /* --- END NEW CSS --- */
+                                              }
+                                              
+                                              .safety-card:hover {
+                                                  border-color: var(--primary-color);
+                                                  transform: translateY(-2px);
+                                                  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+                                              }
+                                              
+                                              .safety-card .icon {
+                                                  font-size: 2.25rem;
+                                                  display: block;
+                                                  margin-bottom: 0.75rem;
+                                              }
+                                              
+                                              .safety-card h3 {
+                                                  font-size: 1.25rem;
+                                                  font-weight: 600;
+                                                  color: var(--dark-text);
+                                                  margin-bottom: 0.5rem;
+                                              }
+                                              
+                                              .safety-card p {
+                                                  color: var(--light-text);
+                                                  font-size: 0.9375rem;
+                                                  /* Allow text to wrap naturally within the square */
+                                                  overflow: hidden;
+                                                  text-overflow: ellipsis;
+                                              }
+                                              /* 4. PASS Section */
+                                              
+                                              .pass-section {
+                                                  padding: 3rem 0;
+                                                  border-top: 1px solid var(--card-border);
+                                                  border-bottom: 1px solid var(--card-border);
+                                              }
+                                              
+                                              .pass-section h2,
+                                              .pass-section .section-desc {
+                                                  text-align: center;
+                                              }
+                                              /* Layout for P.A.S.S. letters and descriptions */
+                                              
+                                              .pass-method-description {
+                                                  display: flex;
+                                                  justify-content: space-between;
+                                                  margin-top: 1.5rem;
+                                                  text-align: center;
+                                                  gap: 1rem;
+                                              }
+                                              
+                                              .pass-item {
+                                                  flex: 1;
+                                                  padding: 0.5rem;
+                                                  border: 1px solid var(--card-border);
+                                                  border-radius: 0.5rem;
+                                                  background-color: #fef2f2;
+                                                  /* Red-50 */
+                                              }
+                                              
+                                              .pass-item .letter {
+                                                  font-size: 3rem;
+                                                  font-weight: 900;
+                                                  color: var(--primary-color);
+                                                  display: block;
+                                                  line-height: 1;
+                                                  margin-bottom: 0.5rem;
+                                              }
+                                              
+                                              .pass-item .action {
+                                                  font-size: 1.125rem;
+                                                  font-weight: 700;
+                                                  color: var(--dark-text);
+                                              }
+                                              
+                                              .pass-item .detail {
+                                                  font-size: 0.875rem;
+                                                  color: var(--light-text);
+                                                  margin-top: 0.25rem;
+                                              }
+                                              /* 5. Evacuation Section */
+                                              
+                                              .evacuation-section {
+                                                  padding: 20px 20px;
+                                                  background: #f8f9fa;
+                                              }
+                                              
+                                              .evacuation-section h2 {
+                                                  margin-right: 500px;
+                                              }
+                                              
+                                              .evacuation-box {
+                                                  display: flex;
+                                                  align-items: center;
+                                                  justify-content: space-between;
+                                                  background: #ffffff;
+                                                  padding: 40px;
+                                                  border-radius: 20px;
+                                                  max-width: 1100px;
+                                                  margin: 40px auto;
+                                                  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+                                              }
+                                              /* ---------- LEFT TEXT AREA ---------- */
+                                              
+                                              .evac-left {
+                                                  flex: 1;
+                                                  text-align: left;
+                                              }
+                                              
+                                              .evac-left h2 {
+                                                  font-size: 28px;
+                                                  font-weight: 700;
+                                                  color: #d62828;
+                                                  margin-bottom: 20px;
+                                              }
+                                              
+                                              .evac-left ul {
+                                                  padding-left: 20px;
+                                                  margin-bottom: 20px;
+                                              }
+                                              
+                                              .evac-left ul li {
+                                                  margin-bottom: 10px;
+                                                  line-height: 1.6;
+                                                  font-size: 16px;
+                                              }
+                                              /* ---------- BUTTON ---------- */
+                                              
+                                              .evac-btn {
+                                                  display: inline-block;
+                                                  background: #d62828;
+                                                  color: #fff;
+                                                  padding: 12px 28px;
+                                                  border-radius: 8px;
+                                                  font-size: 16px;
+                                                  font-weight: 600;
+                                                  text-decoration: none;
+                                                  transition: 0.3s ease-in-out;
+                                              }
+                                              
+                                              .evac-btn:hover {
+                                                  background: #b71c1c;
+                                              }
+                                              /* ---------- RIGHT SIDE IMAGE ---------- */
+                                              
+                                              .evacuation-box img {
+                                                  flex: 1;
+                                                  max-width: 380px;
+                                                  margin-left: 50px;
+                                                  border-radius: 12px;
+                                              }
+                                              /* ---------- RESPONSIVE (Mobile) ---------- */
+                                              
+                                              @media (max-width: 768px) {
+                                                  .evacuation-box {
+                                                      flex-direction: column;
+                                                      text-align: center;
+                                                      padding: 30px;
+                                                  }
+                                                  .evac-left {
+                                                      text-align: center;
+                                                  }
+                                                  .evacuation-box img {
+                                                      margin: 25px 0 0;
+                                                      max-width: 320px;
+                                                      width: 100%;
+                                                  }
+                                              }
+                                              /* 6. Footer */
+                                              
+                                              footer {
+                                                  text-align: center;
+                                                  padding: 1.5rem 1rem;
+                                                  border-top: 1px solid var(--card-border);
+                                                  margin-top: 2rem;
+                                                  color: var(--light-text);
+                                                  font-size: 0.875rem;
+                                              }
+                                              /* Responsive adjustments */
+                                              
+                                              @media (max-width: 768px) {
+                                                  .nav-links {
+                                                      display: none;
+                                                      /* Hide navigation on mobile for simplicity */
+                                                  }
+                                                  .nav-container {
+                                                      justify-content: center;
+                                                      /* Center logo when links are hidden */
+                                                  }
+                                                  .safety-hero h1 {
+                                                      font-size: 1.875rem;
+                                                  }
+                                                  .evacuation-box {
+                                                      flex-direction: column;
+                                                      padding: 1.5rem;
+                                                  }
+                                                  .evacuation-box img {
+                                                      max-width: 100%;
+                                                      margin-top: 1.5rem;
+                                                      max-height: 200px;
+                                                      /* Constrain image height on mobile */
+                                                  }
+                                                  .pass-method-description {
+                                                      flex-wrap: wrap;
+                                                  }
+                                                  .pass-item {
+                                                      flex-basis: 45%;
+                                                      /* Two columns on mobile */
+                                                      margin-bottom: 1rem;
+                                                  }
+                                              }
+                                              /* Report Form */
+                                              /* Report Form Container */
+                                              
+                                              .page-title {
+                                                  text-align: center;
+                                                  background-color: #f7f7f7;
+                                                  padding: 40px 20px;
+                                              }
+                                              
+                                              .page-title h2 {
+                                                  color: #d62828;
+                                                  margin-bottom: 10px;
+                                              }
+                                              
+                                              .report-form {
+                                                  max-width: 600px;
+                                                  margin: 40px auto;
+                                                  padding: 20px;
+                                                  background-color: white;
+                                                  border-radius: 8px;
+                                                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                                              }
+                                              
+                                              .report-form form {
+                                                  display: flex;
+                                                  flex-direction: column;
+                                              }
+                                              
+                                              .report-form label {
+                                                  margin-top: 10px;
+                                                  font-weight: bold;
+                                              }
+                                              
+                                              .report-form input,
+                                              .report-form textarea {
+                                                  margin-top: 5px;
+                                                  padding: 10px;
+                                                  border: 1px solid #ccc;
+                                                  border-radius: 5px;
+                                                  font-size: 15px;
+                                              }
+                                              /* Removed Get Location button (loc-btn) — no need */
+                                              /* Only kept submit button */
+                                              
+                                              .submit-btn {
+                                                  background-color: #e63946;
+                                                  color: white;
+                                                  border: none;
+                                                  padding: 12px;
+                                                  margin-top: 20px;
+                                                  border-radius: 5px;
+                                                  cursor: pointer;
+                                                  font-size: 16px;
+                                              }
+                                              
+                                              .submit-btn:hover {
+                                                  background-color: #d62828;
+                                              }
+                                              /* Map Page */
+                                              /* Map Section Wrapper */
+                                              
+                                              .map-section {
+                                                  max-width: 900px;
+                                                  margin: 40px auto;
+                                                  padding: 25px;
+                                                  background-color: #ffffff;
+                                                  border-radius: 10px;
+                                                  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+                                              }
+                                              /* Map Heading */
+                                              
+                                              .map-section h2 {
+                                                  text-align: center;
+                                                  margin-bottom: 20px;
+                                                  color: #d62828;
+                                                  /* FireAware red theme */
+                                                  font-size: 28px;
+                                              }
+                                              /* Input Box */
+                                              
+                                              .map-section input {
+                                                  width: 70%;
+                                                  padding: 12px;
+                                                  font-size: 16px;
+                                                  border: 1px solid #ccc;
+                                                  border-radius: 6px;
+                                                  outline: none;
+                                              }
+                                              /* Search Button */
+                                              
+                                              .map-section button {
+                                                  padding: 12px 18px;
+                                                  font-size: 16px;
+                                                  margin-left: 5px;
+                                                  background-color: #d62828;
+                                                  color: white;
+                                                  border: none;
+                                                  border-radius: 6px;
+                                                  cursor: pointer;
+                                                  transition: 0.2s ease-in-out;
+                                              }
+                                              
+                                              .map-section button:hover {
+                                                  background-color: #a61f1f;
+                                              }
+                                              /* Map Box */
+                                              
+                                              #map {
+                                                  height: 450px;
+                                                  width: 100%;
+                                                  margin-top: 25px;
+                                                  border-radius: 8px;
+                                                  overflow: hidden;
+                                                  border: 1px solid #ddd;
+                                              }
+                                              /* ===== Login & Signup Page Styles ===== */
+                                              /* ===== Common Login & Signup Page Styles ===== */
+                                              /* ==== FireAware Login & Signup Unique Theme ==== */
+                                              
+                                              body.fire-theme {
+                                                  background: radial-gradient(circle at bottom right, #111 0%, #000 60%);
+                                                  color: white;
+                                                  height: 100vh;
+                                                  display: flex;
+                                                  justify-content: center;
+                                                  align-items: center;
+                                                  overflow: hidden;
+                                                  position: relative;
+                                              }
+                                              /* Animated glowing background */
+                                              
+                                              body.fire-theme::before {
+                                                  content: "";
+                                                  position: absolute;
+                                                  width: 600px;
+                                                  height: 600px;
+                                                  background: radial-gradient(circle, rgba(255, 69, 0, 0.4), transparent 70%);
+                                                  top: -200px;
+                                                  left: -200px;
+                                                  filter: blur(80px);
+                                                  animation: glowMove 8s infinite alternate;
+                                              }
+                                              
+                                              body.fire-theme::after {
+                                                  content: "";
+                                                  position: absolute;
+                                                  width: 500px;
+                                                  height: 500px;
+                                                  background: radial-gradient(circle, rgba(255, 140, 0, 0.3), transparent 70%);
+                                                  bottom: -200px;
+                                                  right: -150px;
+                                                  filter: blur(100px);
+                                                  animation: glowMove2 10s infinite alternate;
+                                              }
+                                              
+                                              @keyframes glowMove {
+                                                  from {
+                                                      transform: translate(0, 0);
+                                                  }
+                                                  to {
+                                                      transform: translate(50px, 50px);
+                                                  }
+                                              }
+                                              
+                                              @keyframes glowMove2 {
+                                                  from {
+                                                      transform: translate(0, 0);
+                                                  }
+                                                  to {
+                                                      transform: translate(-50px, -50px);
+                                                  }
+                                              }
+                                              /* Card container */
+                                              
+                                              .glow-card {
+                                                  background: rgba(255, 255, 255, 0.1);
+                                                  backdrop-filter: blur(20px);
+                                                  padding: 40px 35px;
+                                                  border-radius: 16px;
+                                                  border: 1px solid rgba(255, 69, 0, 0.6);
+                                                  box-shadow: 0 0 30px rgba(255, 69, 0, 0.2);
+                                                  width: 360px;
+                                                  position: relative;
+                                                  z-index: 2;
+                                                  animation: fadeIn 1s ease-out;
+                                              }
+                                              
+                                              @keyframes fadeIn {
+                                                  from {
+                                                      opacity: 0;
+                                                      transform: translateY(20px);
+                                                  }
+                                                  to {
+                                                      opacity: 1;
+                                                      transform: translateY(0);
+                                                  }
+                                              }
+                                              /* Heading */
+                                              
+                                              .glow-card h2 {
+                                                  text-align: center;
+                                                  color: #ff4500;
+                                                  margin-bottom: 25px;
+                                                  font-size: 26px;
+                                              }
+                                              /* Input Groups */
+                                              
+                                              .auth-input-group {
+                                                  margin-bottom: 18px;
+                                              }
+                                              
+                                              .auth-input-group label {
+                                                  display: block;
+                                                  margin-bottom: 6px;
+                                                  color: #ddd;
+                                                  font-size: 14px;
+                                              }
+                                              
+                                              .auth-input-group input {
+                                                  width: 100%;
+                                                  padding: 10px 12px;
+                                                  border-radius: 8px;
+                                                  border: 1px solid #666;
+                                                  background: rgba(255, 255, 255, 0.15);
+                                                  color: white;
+                                                  outline: none;
+                                              }
+                                              
+                                              .auth-input-group input::placeholder {
+                                                  color: #bbb;
+                                              }
+                                              
+                                              .auth-input-group input:focus {
+                                                  border-color: #ff4500;
+                                                  box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
+                                              }
+                                              /* Buttons */
+                                              
+                                              .auth-btn.red {
+                                                  width: 100%;
+                                                  background: linear-gradient(90deg, #ff4500, #ff6347);
+                                                  border: none;
+                                                  padding: 10px;
+                                                  border-radius: 8px;
+                                                  color: white;
+                                                  font-weight: bold;
+                                                  cursor: pointer;
+                                                  transition: 0.3s;
+                                              }
+                                              
+                                              .auth-btn.red:hover {
+                                                  background: linear-gradient(90deg, #ff6347, #ff4500);
+                                                  box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+                                              }
+                                              /* Redirect text */
+                                              
+                                              .auth-redirect {
+                                                  text-align: center;
+                                                  color: #ccc;
+                                                  margin-top: 15px;
+                                              }
+                                              
+                                              .auth-redirect a {
+                                                  color: #ff6347;
+                                                  text-decoration: none;
+                                                  font-weight: bold;
+                                              }
+                                              
+                                              .auth-redirect a:hover {
+                                                  text-decoration: underline;
+                                              }
