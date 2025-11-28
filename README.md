@@ -1,1 +1,1 @@
-# firex
+FireX is a safety-focused web application designed to help users during fire emergencies. The platform provides essential fire safety tips, enables users to quickly report fire incidents, and automatically locates nearby fire stations using location-based services. Built using HTML, CSS, JavaScript, PHP, and MySQL, FireX ensures a fast and user-friendly experience. The system securely stores reports in a database and offers real-time assistance features, making it a valuable tool for improving community safety and emergency response.
